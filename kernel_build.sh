@@ -8,7 +8,7 @@
 
 echo "Downloading few Dependecies . . ."
 # Kernel Sources
-git clone --depth=1 https://github.com/mgs28-mh/kernel_xiaomi_ulysse-4.9.git -b a12/temp ulysse
+git clone --depth=1 https://github.com/MhmmdAmier/kernel_xiaomi_ulysse-4.9.git -b wip ulysse
 git clone --depth=1 https://github.com/Gabuters-Dev/gabuters-clang -b master GABUTERSxTC
 
 # Main Declaration
@@ -101,8 +101,8 @@ function push() {
 # Zipping
 function zipping() {
     cd AnyKernel || exit 1
-    zip -r9 Kernel-Archipelago-ulysse-${DATE}.zip *
-    MD5CHECK=$(md5sum "Kernel-Archipelago-ulysse-${DATE}.zip" | cut -d' ' -f1)
+    zip -r9 Kernel-Gabuters-ulysse-${DATE}.zip *
+    MD5CHECK=$(md5sum "Kernel-Gabuters-ulysse-${DATE}.zip" | cut -d' ' -f1)
     cd ..
 }
 check
