@@ -8,14 +8,14 @@
 
 echo "Downloading few Dependecies . . ."
 # Kernel Sources
-git clone --depth=1 https://github.com/mgs28-mh/kernel_xiaomi_ulysse-4.9.git -b a12/temp ulysse
+git clone --depth=1 https://github.com/ZilverQueen/android_kernel_xiaomi_msm8937.git -b dctcp ulysse
 git clone --depth=1 https://github.com/Gabuters-Dev/gabuters-clang -b master GABUTERSxTC
 
 # Main Declaration
 KERNEL_ROOTDIR=$(pwd)/ulysse # IMPORTANT ! Fill with your kernel source root directory.
 DEVICE_DEFCONFIG=ulysse_defconfig # IMPORTANT ! Declare your kernel source defconfig file here.
 CLANG_ROOTDIR=$(pwd)/GABUTERSxTC # IMPORTANT! Put your clang directory here.
-export KBUILD_BUILD_USER=nobody # Change with your own name or else.
+export KBUILD_BUILD_USER=msm8917 # Change with your own name or else.
 export KBUILD_BUILD_HOST=Gabuters-dev # Change with your own hostname.
 export PROCS=$(nproc --all)
 export DISTRO=$(source /etc/os-release && echo "${NAME}")
@@ -101,8 +101,8 @@ function push() {
 # Zipping
 function zipping() {
     cd AnyKernel || exit 1
-    zip -r9 Kernel-Archipelago-ulysse-${DATE}.zip *
-    MD5CHECK=$(md5sum "Kernel-Archipelago-ulysse-${DATE}.zip" | cut -d' ' -f1)
+    zip -r9 Kernel-Mirai-DCTCP-ulysse-${DATE}.zip *
+    MD5CHECK=$(md5sum "Kernel-Mirai-DCTCP-ulysse-${DATE}.zip" | cut -d' ' -f1)
     cd ..
 }
 check
